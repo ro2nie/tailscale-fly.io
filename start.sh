@@ -22,7 +22,8 @@ fi
 
 until /app/tailscale up \
     --authkey=${TAILSCALE_AUTHKEY} \
-    --hostname=${FLY_REGION} \
+    --advertise-tags=tag:cloud \
+    --hostname=${FLY_APP_NAME} \
     --advertise-exit-node \
     --accept-routes
 do
